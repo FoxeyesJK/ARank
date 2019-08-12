@@ -1,31 +1,10 @@
-
 import { createAction, handleActions } from 'redux-actions';
 
-import { Map, List, fromJS } from 'immutable';
+import { Map } from 'immutalbe';
 import { pender } from 'redux-pender';
 
-import * as api from 'lib/api';
+const initialState = Map({});
 
-// action types
-const GET_POST_LIST = 'list/GET_POST_LIST';
-
-// action creators
-export const getPostList = createAction(GET_POST_LIST, api.getPostList, meta => meta);
-
-// initial state
-const initialState = Map({
-    posts: List(),
-});
-
-// reducer
 export default handleActions({
-    ...pender({
-        type: GET_POST_LIST,
-        onSuccess: (state, action) => {
-            const { data: posts } = action.payload;
 
-            return state.set('posts', posts);
-            //return state.set('posts', fromJS(posts));
-        }
-    })
 }, initialState)
