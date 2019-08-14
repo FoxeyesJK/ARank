@@ -1,4 +1,4 @@
-const Post = require('models/post');
+const Artist = require('models/artist');
 const Joi = require('joi');
 const { ObjectId } = require('mongoose').Types;
 
@@ -30,13 +30,13 @@ exports.write = async (ctx) => {
 
     const { name, genre, like } = ctx.request.body;
 
-    const post = new Post({
+    const artist = new Artist({
         name, genre, like
     });
 
     try {
-        await post.save();
-        ctx.body = post;
+        await artist.save();
+        ctx.body = artist;
     } catch(e) {
         ctx.throw(e, 500);
     }
@@ -44,8 +44,8 @@ exports.write = async (ctx) => {
 
 exports.list = async (ctx) => {
     try {
-        const posts = await Post.find().exec();
-        ctx.body = posts;
+        const artists = await Artist.find().exec();
+        ctx.body = artists;
     } catch(e) {
         ctx.throw(e, 500);
     }
@@ -54,13 +54,13 @@ exports.list = async (ctx) => {
 exports.read = async (ctx) => {
     const { id } = ctx.params;
     try {
-        const post = await Post.findById(id).exec();
+        const artist = await Artist.findById(id).exec();
 
-        if(!post) {
+        if(!artist) {
             ctx.status = 404;
             return;
         }
-        ctx.body = post;
+        ctx.body = artist;
     } catch(e) {
         ctx.throw(e, 500);
     }
@@ -69,7 +69,7 @@ exports.read = async (ctx) => {
 exports.remove = async (ctx) => {
     const { id } = ctx.params;
     try {
-        await Post.findByIdAndRemove(id).exec();
+        await Artist.findByIdAndRemove(id).exec();
         ctx.status = 204;
     } catch(e) {
         ctx.throw(e, 500);
@@ -79,15 +79,15 @@ exports.remove = async (ctx) => {
 exports.update = async (ctx) => {
     const { id } = ctx.params;
     try {
-        const post = await Post.findByIdAndUpdate(id, ctx.request.body, {
+        const artist = await Artist.findByIdAndUpdate(id, ctx.request.body, {
             new: true
         }).exec();
 
-        if(!post) {
+        if(!artist) {
             ctx.status = 404;
             return;
         }
-        ctx.body = post;
+        ctx.body = artist;
     } catch(e) {
         ctx.throw(e, 500);
     } 

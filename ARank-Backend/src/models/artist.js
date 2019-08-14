@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
-const Post = new Schema({
+const Artist = new Schema({
     name: String,
     genre: [String],
     publishedDate: {
@@ -15,4 +15,4 @@ const Post = new Schema({
     }
 });
 
-module.exports = mongoose.model('Post', Post);
+module.exports = mongoose.model('Artist', Artist);

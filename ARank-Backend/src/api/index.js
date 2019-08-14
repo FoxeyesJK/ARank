@@ -1,8 +1,8 @@
 const Router = require('koa-router');
-const posts = require('./posts');
+const artists = require('./artists');
 
 const api = new Router();
 
-api.use('/posts', posts.routes());
+api.use('/artists', artists.routes());
 
 module.exports = api;
