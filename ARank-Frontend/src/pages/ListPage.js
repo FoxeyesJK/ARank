@@ -1,14 +1,14 @@
 import React from 'react';
 import PageTemplate from '../components/common/PageTemplate';
 import ListWrapper from '../components/list/ListWrapper';
-import ArtistList from '../components/list/ArtistList';
+import ListContainer from '../containers/list/ListContainer';
 
 
 const ListPage = () => {
     return (
         <PageTemplate>
             <ListWrapper>
-                <ArtistList/>
+                <ListContainer/>
             </ListWrapper>
         </PageTemplate>
     )

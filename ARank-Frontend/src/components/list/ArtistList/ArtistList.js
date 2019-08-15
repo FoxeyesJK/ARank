@@ -1,21 +1,34 @@
 import React from 'react';
+import removeMd from 'remove-markdown';
 
-const ArtistItem = () => {
+const ArtistItem = ({name, like}) => {
     return (
         <div>
-            <h2>title</h2>
+            <h2>{name}</h2>
             <div>
-                hi
+                {like}
             </div>
         </div>
     )
 }
 
-const ArtistList = () => (
-    <div>
-        <ArtistItem/>
-        <ArtistItem/>
-    </div>
-)
+const ArtistList = ({artists}) => {
+    const artistList = artists.map(
+        (artist) => {
+            const { _id, name, like } = artist.toJS();
+            return (
+                <ArtistItem 
+                    name={name}
+                    like={like}
+                />
+            )
+        }
+    )
+    return (
+        <div>
+            {artistList}
+        </div>
+    )   
+}
 
 export default ArtistList
