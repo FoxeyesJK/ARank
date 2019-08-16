@@ -3,10 +3,13 @@ import removeMd from 'remove-markdown';
 
 const ArtistItem = ({name, like}) => {
     return (
-        <div>
-            <h2>{name}</h2>
-            <div>
-                {like}
+        <div class="column">
+            <div class="ui segment">
+            <img src="https://edmtrain.s3.amazonaws.com/img/artist/Gryffin.jpg?v=4" alt="Mountain"></img>
+                <div>{name}</div>
+                <div>
+                    {like}
+                </div>
             </div>
         </div>
     )
@@ -25,7 +28,7 @@ const ArtistList = ({artists}) => {
         }
     )
     return (
-        <div>
+        <div class="ui five column grid">
             {artistList}
         </div>
     )   

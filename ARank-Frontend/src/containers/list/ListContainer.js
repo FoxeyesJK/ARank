@@ -3,6 +3,7 @@ import ArtistList from '../../components/list/ArtistList';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as listActions from '../../store/modules/list';
+import {Button} from 'semantic-ui-react';
 
 class ListContainer extends Component {
     getArtistList = () => {
