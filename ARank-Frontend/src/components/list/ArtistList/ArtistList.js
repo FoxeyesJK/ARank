@@ -2,22 +2,6 @@ import React from 'react';
 import removeMd from 'remove-markdown';
 import { Header, Grid, Segment } from 'semantic-ui-react';
 
-const style = {
-    h1: {
-      marginTop: '3em',
-    },
-    h2: {
-      margin: '4em 0em 2em',
-    },
-    h3: {
-      marginTop: '2em',
-      padding: '2em 0em',
-    },
-    last: {
-      marginBottom: '300px',
-    },
-  }
-
 const ArtistItem = ({name, like}) => {
     return (
                 <Grid.Column>
@@ -46,7 +30,6 @@ const ArtistList = ({artists}) => {
     )
     return (
         <div>
-             <Header as='h2' content='Responsive Grid with Variations' style={style.h2} textAlign='center'/>
              <Grid columns={3} container divided stackable>
             <Grid.Row>
             {artistList}
