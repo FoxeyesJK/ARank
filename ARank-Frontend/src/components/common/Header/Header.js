@@ -1,17 +1,9 @@
 import React from 'react';
+import HeadMenu from '../HeadMenu';
 
 const Header = () => (
     <header>
-        <div>
-            <div class="ui inverted menu">
-                <div class="header item">
-                    Logo
-                </div>
-                    <a class="right item active">
-                        Log In
-                    </a>
-            </div>
-        </div>
+        <HeadMenu/>
     </header>
 )
 
