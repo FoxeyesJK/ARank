@@ -1,21 +1,23 @@
 import React from 'react';
 import removeMd from 'remove-markdown';
-import { Header, Grid, Segment, Button } from 'semantic-ui-react';
+import { Image, Grid, Segment, Button } from 'semantic-ui-react';
 
+const style = {
+    box: {
+      boxShadow: "none"
+    },
+  }
 const ArtistItem = ({name, like}) => {
     return (
-            <Grid.Column>
+            <Grid.Column style={style.box}>
                 <Segment>
-                    <img src="https://edmtrain.s3.amazonaws.com/img/artist/Gryffin.jpg?v=4" alt="Mountain"></img>
+                    <Image src="https://edmtrain.s3.amazonaws.com/img/artist/Gryffin.jpg?v=4" />
                     <div>{name}</div>
-                    <div>
-                        {like}
-                    </div>
                     <Button
                     color='red'
                     content='Like'
                     icon='heart'
-                    label={{ basic: true, color: 'red', pointing: 'left', content: '123' }}
+                    label={{ basic: true, color: 'red', pointing: 'left', content: like }}
                     />
                 </Segment>
             </Grid.Column>
@@ -36,7 +38,7 @@ const ArtistList = ({artists}) => {
     )
     return (
         <div>
-             <Grid columns={3} container divided stackable>
+             <Grid columns={3} style={{marginTop:"50px"}} container divided stackable>
             <Grid.Row>
             {artistList}
             </Grid.Row>
