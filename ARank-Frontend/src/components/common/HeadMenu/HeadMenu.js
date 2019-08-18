@@ -14,9 +14,11 @@ const HeadMenu = () => (
             <Menu.Item>
             <img src='/logo.png' />
             </Menu.Item>
+            <Menu.Menu position="right">
             <Menu.Item>Features</Menu.Item>
             <Menu.Item>Testimonials</Menu.Item>
             <Menu.Item>Sign-in</Menu.Item>
+            </Menu.Menu>
         </Menu>
     </Container>
     </div>
