@@ -26,9 +26,9 @@ const ArtistItem = ({name, like}) => {
 
 const ArtistList = ({artists}) => {
     const artistList = artists.map(
-        (artist) => {
+        (artist, index) => { 
             const { _id, name, like } = artist.toJS();
-            return (
+            return ( 
                 <ArtistItem 
                     name={name}
                     like={like}
@@ -39,10 +39,8 @@ const ArtistList = ({artists}) => {
     return (
         <div>
              <Grid columns={3} style={{marginTop:"50px"}} container divided stackable>
-            <Grid.Row>
-            {artistList}
-            </Grid.Row>
-        </Grid>
+                {artistList}
+            </Grid>
         </div>
     )   
 }
