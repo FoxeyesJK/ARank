@@ -17,7 +17,8 @@ exports.write = async (ctx) => {
     //Request body can be found from ctx.request.body in REST API
     const schema = Joi.object().keys({
         name: Joi.string().required(),
-        //genre: Joi.array().items(Joi.string()).required(),
+        genre: Joi.array().items(Joi.string()).required(),
+        like: Joi.string()
     });
 
     const result = Joi.validate(ctx.request.body, schema);
