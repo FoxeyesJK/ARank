@@ -4,7 +4,7 @@ const { Schema } = mongoose;
 
 const Artist = new Schema({
     name: String,
-    genre: [String],
+    genres: [String],
     publishedDate: {
         type: Date,
         default: new Date()

@@ -17,7 +17,7 @@ exports.write = async (ctx) => {
     //Request body can be found from ctx.request.body in REST API
     const schema = Joi.object().keys({
         name: Joi.string().required(),
-        genre: Joi.array().items(Joi.string()).required(),
+        genres: Joi.array().items(Joi.string()).required(),
         like: Joi.string()
     });
 
@@ -29,10 +29,10 @@ exports.write = async (ctx) => {
         return;
     }
 
-    const { name, genre, like } = ctx.request.body;
+    const { name, genres, like } = ctx.request.body;
 
     const artist = new Artist({
-        name, genre, like
+        name, genres, like
     });
 
     try {
