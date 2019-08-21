@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header, Menu, Container } from 'semantic-ui-react';
+import { Image, Icon, Menu, Container } from 'semantic-ui-react';
 
 const style = {
     Container: {
@@ -12,12 +12,14 @@ const HeadMenu = () => (
     <Container style={style.Container}>
         <Menu stackable>
             <Menu.Item>
-            <img src='/logo.png' />
+            <Image src='https://static-s.aa-cdn.net/img/ios/1143390028/ce6c711d3c4c8bf403b07e9e13502ed1' size='mini'/>
             </Menu.Item>
             <Menu.Menu position="right">
-            <Menu.Item>Features</Menu.Item>
-            <Menu.Item>Testimonials</Menu.Item>
-            <Menu.Item>Sign-in</Menu.Item>
+              <Menu.Item>Features</Menu.Item>
+              <Menu.Item>Testimonials</Menu.Item>
+              <Menu.Item>
+                  <Icon name='user'/>Sign-in
+                </Menu.Item>
             </Menu.Menu>
         </Menu>
     </Container>
