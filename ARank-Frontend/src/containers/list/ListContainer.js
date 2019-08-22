@@ -7,9 +7,10 @@ import {Button} from 'semantic-ui-react';
 
 class ListContainer extends Component {
     getArtistList = () => {
-        const { name, like, ListActions } = this.props;
+        const { name, genres, like, ListActions } = this.props;
         ListActions.getArtistList({
             name,
+            genres,
             like
         });
     }
@@ -28,7 +29,7 @@ class ListContainer extends Component {
     render() {
         const { loading, artists } = this.props;
         if(loading) return null;
-        console.log(artists);
+
         return(
             <div>
                 <ArtistList artists={artists}/>
