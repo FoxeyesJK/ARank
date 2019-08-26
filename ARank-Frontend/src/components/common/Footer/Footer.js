@@ -1,9 +1,8 @@
 import React from 'react';
 
-const Footer = ({onLoginClick}) => (
+const Footer = () => (
     <footer>
         Footer
-        <div onClick={onLoginClick}>Admin Login</div>
     </footer>
 )
 

@@ -7,7 +7,7 @@ const style = {
     },
   }
 
-const HeadMenu = () => (
+const HeadMenu = ({onLoginClick}) => (
   <div>
     <Container style={style.Container}>
         <Menu stackable>

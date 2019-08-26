@@ -1,15 +1,16 @@
 import React from 'react';
 import Header from '../Header';
+import Footer from '../Footer';
 //import Footer from '../Footer';
-import FooterContainer from '../../../containers/common/FooterContainer';
+import HeaderContainer from '../../../containers/common/HeaderContainer';
 
 const PageTemplate = ({children}) => (
     <div>
-        <Header />
+        <HeaderContainer />
         <main>
             {children}
         </main>
-        <FooterContainer />
+        <Footer/> 
     </div>
 )
 

@@ -30,12 +30,10 @@ class ModalWrapper extends Component {
         if(!visible && !animate) return null;
 
         const animation = animate && visible ? 'enter' : 'leave';
-        
+
         return (
             <div>
-                <div>
-                    {children}
-                </div>
+                {children}
             </div>
         )
     }
