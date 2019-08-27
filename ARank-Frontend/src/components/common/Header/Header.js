@@ -23,8 +23,8 @@ const Header = ({onLoginClick, logged}) => (
                 <Menu.Item>Features</Menu.Item>
                 <Menu.Item>Testimonials</Menu.Item>
                 <Menu.Item>
-                    <Modal trigger={logged ? <Icon name='user'/> : <Button onClick={onLoginClick} style={style.SignIn} basic>Sign In</Button>}>
-                        <Base/>
+                    <Modal size='tiny' trigger={logged ? <Icon name='user'/> : <Button onClick={onLoginClick} style={style.SignIn} basic>Sign In</Button>}>
+                        <Base />
                     </Modal>
                   </Menu.Item>
               </Menu.Menu>
